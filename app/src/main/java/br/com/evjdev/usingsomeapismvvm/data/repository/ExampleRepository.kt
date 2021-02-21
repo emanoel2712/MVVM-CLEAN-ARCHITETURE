@@ -1,12 +1,13 @@
-package br.com.evjdev.usingsomeapismvvm.data.api.service
+package br.com.evjdev.usingsomeapismvvm.data.repository
 
 import br.com.evjdev.usingsomeapismvvm.data.api.APIClient
+import br.com.evjdev.usingsomeapismvvm.data.api.BaseServiceIF
 import br.com.evjdev.usingsomeapismvvm.data.model.Example
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ExampleServiceF(var baseServiceIF: BaseServiceIF) {
+class ExampleRepository(var baseServiceIF: BaseServiceIF) {
 
     lateinit var mAPIClient: APIClient
 
@@ -18,11 +19,11 @@ class ExampleServiceF(var baseServiceIF: BaseServiceIF) {
             override fun onResponse(call: Call<Example>, response: Response<Example>) {
                 if (!response.isSuccessful) {
 //                    baseServiceIF.onResultFail(mainAPIClient.handlerAPIError(response.errorBody()))
-//                    println("Falha na resposta do serviço!!")
+                    println("Falha na resposta do serviço!!")
                 }
 
                 response.body()?.let {
-                   baseServiceIF.onResultSuccess(Response.success(it), wsTagInt)
+                    baseServiceIF.onResultSuccess(Response.success(it), wsTagInt)
                 }
             }
 
