@@ -2,21 +2,21 @@ package br.com.evjdev.usingsomeapismvvm.data.repository
 
 import br.com.evjdev.usingsomeapismvvm.data.api.APIClient
 import br.com.evjdev.usingsomeapismvvm.data.api.BaseServiceIF
-import br.com.evjdev.usingsomeapismvvm.data.model.Example
+import br.com.evjdev.usingsomeapismvvm.data.model.Manga
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ExampleRepository(var baseServiceIF: BaseServiceIF) {
+class MangaRepository(var baseServiceIF: BaseServiceIF) {
 
     lateinit var mAPIClient: APIClient
 
     fun getExampleList(wsTagInt: Int) {
 
-        val mCallback: Call<Example> = mAPIClient.clientAPI.listRepos("joao")
-        mCallback.enqueue(object : Callback<Example> {
+        val mCallback: Call<Manga> = mAPIClient.clientAPI.listRepos("joao")
+        mCallback.enqueue(object : Callback<Manga> {
 
-            override fun onResponse(call: Call<Example>, response: Response<Example>) {
+            override fun onResponse(call: Call<Manga>, response: Response<Manga>) {
                 if (!response.isSuccessful) {
 //                    baseServiceIF.onResultFail(mainAPIClient.handlerAPIError(response.errorBody()))
                     println("Falha na resposta do serviço!!")
@@ -27,7 +27,7 @@ class ExampleRepository(var baseServiceIF: BaseServiceIF) {
                 }
             }
 
-            override fun onFailure(call: Call<Example>, t: Throwable) {
+            override fun onFailure(call: Call<Manga>, t: Throwable) {
 
             }
         })
