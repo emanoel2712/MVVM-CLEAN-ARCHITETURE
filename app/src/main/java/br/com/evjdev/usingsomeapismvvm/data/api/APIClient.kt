@@ -16,8 +16,6 @@ class APIClient {
             .build()
 
         this.clientAPI = retrofit.create(APIEndpoint::class.java)
-
-
     }
 
 }

@@ -1,8 +1,8 @@
 package br.com.evjdev.usingsomeapismvvm.data.repository
 
 import br.com.evjdev.usingsomeapismvvm.data.api.APIClient
-import br.com.evjdev.usingsomeapismvvm.data.api.BaseServiceIF
 import br.com.evjdev.usingsomeapismvvm.data.model.Manga
+import br.com.evjdev.usingsomeapismvvm.ui.main.viewmodel.MangaViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -11,9 +11,10 @@ class MangaRepository(var baseServiceIF: BaseServiceIF) {
 
     lateinit var mAPIClient: APIClient
 
-    fun getExampleList(wsTagInt: Int) {
+    fun getMangas(wsTagInt: Int) {
 
-        val mCallback: Call<Manga> = mAPIClient.clientAPI.listRepos("joao")
+        val mCallback: Call<Manga> =
+            mAPIClient.clientAPI.getMangas(MangaViewModel.sharedInstance.getMangaRandom())
         mCallback.enqueue(object : Callback<Manga> {
 
             override fun onResponse(call: Call<Manga>, response: Response<Manga>) {

@@ -1,7 +1,8 @@
-package br.com.evjdev.usingsomeapismvvm
+package br.com.evjdev.usingsomeapismvvm.ui.main.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import br.com.evjdev.usingsomeapismvvm.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
