@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface APIEndpoint {
+interface APIResource {
 
     @GET("https://api.jikan.moe/v3/search/manga")
     fun getMangas(@Query("q") query: String): Call<Manga>

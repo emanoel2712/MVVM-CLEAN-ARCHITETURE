@@ -6,16 +6,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class APIClient {
 
-    var clientAPI: APIEndpoint
+    var clientAPI: APIResource
 
     init {
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("asdsadsad")
+            .baseUrl("https://api.jikan.moe/v3/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        this.clientAPI = retrofit.create(APIEndpoint::class.java)
+        this.clientAPI = retrofit.create(APIResource::class.java)
     }
 
 }

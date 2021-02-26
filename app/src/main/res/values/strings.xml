@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">UsingSomeAPISMVVM</string>
+    <string name="app_name">UsingSomeAPIs</string>
+    <string name="see_favorite_anime">Veja seus animes favoritos</string>
+    <string name="search_your_anime">Pesquise o seu anime favorito</string>
+    <string name="animes">Animes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="episodes">Episódios</string>
+    <string name="episode">Episódio</string>
+    <string name="url_is_empty">Esse episódio não possui video!</string>
 </resources>

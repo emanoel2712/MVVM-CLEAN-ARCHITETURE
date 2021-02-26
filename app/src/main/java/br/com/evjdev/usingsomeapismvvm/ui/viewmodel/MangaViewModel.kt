@@ -6,7 +6,8 @@ import br.com.evjdev.usingsomeapismvvm.data.repository.BaseServiceIF
 import br.com.evjdev.usingsomeapismvvm.data.model.Manga
 import br.com.evjdev.usingsomeapismvvm.data.model.response.MangaResponse
 import br.com.evjdev.usingsomeapismvvm.data.repository.MangaRepository
-import br.com.evjdev.usingsomeapismvvm.utils.Values
+import br.com.evjdev.usingsomeapismvvm.resource.utils.Values
+import br.com.evjdev.usingsomeapismvvm.ui.viewmodel.GlobalViewModel
 import retrofit2.Response
 
 class MangaViewModel() : ViewModel(), BaseServiceIF {
@@ -40,10 +41,9 @@ class MangaViewModel() : ViewModel(), BaseServiceIF {
         return mangaListIn.random()
     }
 
-    fun getMangaList(): MutableLiveData<List<Manga>> {
+    fun getMangaListDataObserver(): MutableLiveData<List<Manga>> {
         return mMangaList
     }
-
 
     //MARK: API Methods
 

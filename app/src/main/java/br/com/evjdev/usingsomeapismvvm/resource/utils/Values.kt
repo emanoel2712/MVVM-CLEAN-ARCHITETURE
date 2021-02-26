@@ -1,4 +1,4 @@
-package br.com.evjdev.usingsomeapismvvm.utils
+package br.com.evjdev.usingsomeapismvvm.resource.utils
 
 object Values {
 
