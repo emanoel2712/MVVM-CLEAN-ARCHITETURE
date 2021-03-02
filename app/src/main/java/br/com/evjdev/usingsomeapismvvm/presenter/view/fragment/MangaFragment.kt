@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_manga.*
 
 class MangaFragment : Fragment() {
 
-    private lateinit var viewModel: MangaViewModel
+    private var viewModel: MangaViewModel = MangaViewModel()
 
     private var binding: FragmentMangaBinding? = null
 
@@ -32,7 +32,7 @@ class MangaFragment : Fragment() {
 
         //Inflate View Binding
         this.binding = FragmentMangaBinding.inflate(inflater, container, false)
-        return view
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,11 +56,13 @@ class MangaFragment : Fragment() {
     }
 
     private fun setupViewModel() {
-        this.viewModel = ViewModelProviders.of(this).get(MangaViewModel::class.java)
+        this.viewModel = ViewModelProviders.of(requireActivity(), defaultViewModelProviderFactory).get(MangaViewModel::class.java)
     }
 
     private fun setupObserverMangasData() {
         this.viewModel.mangas.observe(viewLifecycleOwner) { mangaListIn ->
+
+            println("LISTA DE MANGAS $mangaListIn")
             this.setupMangaRV(mangaListIn)
 //            this.populateMangas(mangaListIn)
         }
@@ -81,6 +83,8 @@ class MangaFragment : Fragment() {
 
             this?.adapter = mMangaAdapter
             this?.layoutManager = mLayoutManager
+
+            println("LISTA DE MANGAS $mangaListIn")
         }
     }
 

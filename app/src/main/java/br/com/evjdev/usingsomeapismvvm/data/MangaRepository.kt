@@ -15,7 +15,7 @@ class MangaRepositoryImpl(private val service: APIClient) : MangaRepository {
     override suspend fun getMangas(): List<Manga>? {
 
         val mCallback: Call<Manga> =
-            this.service.clientAPI.getMangas(MangaViewModel.sharedInstance.getMangaRandom())
+            this.service.clientAPI.getMangas(MangaViewModel.getMangaRandom())
         mCallback.enqueue(object : Callback<Manga> {
             override fun onResponse(call: Call<Manga>, response: Response<Manga>) {
 
@@ -26,6 +26,8 @@ class MangaRepositoryImpl(private val service: APIClient) : MangaRepository {
                 response.body()?.let {
                     val mangaResponseIn: MangaResponse? = response.body() as MangaResponse?
                     mangasListIn = mangaResponseIn?.mListIn
+
+                    println("RESPONSE SERVIÇO " + mangasListIn)
                 }
             }
 

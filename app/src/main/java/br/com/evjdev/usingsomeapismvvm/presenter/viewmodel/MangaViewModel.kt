@@ -11,7 +11,26 @@ import kotlinx.coroutines.launch
 class MangaViewModel(private val getMangasUseCase: GetMangasUseCase? = null) : ViewModel() {
 
     companion object {
-        var sharedInstance: MangaViewModel = MangaViewModel()
+        fun getMangaRandom(): String {
+            val mangaListIn: List<String> = listOf(
+                "Death Note", "Fullmetal Alchemist",
+                "Ataque dos Titãs",
+                "Sakura Card Captors",
+                "Dr. Stone",
+                "The Seven Deadly Sins",
+                "Cavaleiros do Zodíaco",
+                "Naruto Gold",
+                "Ghost in the Shell",
+                "Dragon Ball",
+                "One Piece",
+                "Hunter x Hunter",
+                "Vinland Saga",
+                "One-Punch Man",
+                "Boku No Hero Academia"
+            )
+
+            return mangaListIn.random()
+        }
     }
 
     private val mMangaList = MutableLiveData<List<Manga>>()
@@ -19,39 +38,18 @@ class MangaViewModel(private val getMangasUseCase: GetMangasUseCase? = null) : V
 
     //MARK: Public Methods
 
-    fun getMangaRandom(): String {
-        val mangaListIn: List<String> = listOf(
-            "Death Note", "Fullmetal Alchemist",
-            "Ataque dos Titãs",
-            "Sakura Card Captors",
-            "Dr. Stone",
-            "The Seven Deadly Sins",
-            "Cavaleiros do Zodíaco",
-            "Naruto Gold",
-            "Ghost in the Shell",
-            "Dragon Ball",
-            "One Piece",
-            "Hunter x Hunter",
-            "Vinland Saga",
-            "One-Punch Man",
-            "Boku No Hero Academia"
-        )
-
-        return mangaListIn.random()
-    }
-
-    fun getMangaListDataObserver(): MutableLiveData<List<Manga>> {
-        return mMangaList
-    }
+//    fun getMangaListDataObserver(): MutableLiveData<List<Manga>> {
+//        return mMangaList
+//    }
 
     //MARK: API Methods
 
     fun getMangas() {
         viewModelScope.launch {
-            val mangaList = getMangasUseCase?.let {
-                it()
+            getMangasUseCase?.let {
+                mMangaList.value = it()
             }
-            mMangaList.value = mangaList
+            println("LIST MANGA IN: ${mMangaList.toString()}")
         }
     }
 }
