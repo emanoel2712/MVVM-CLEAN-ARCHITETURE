@@ -1,6 +1,6 @@
-package br.com.evjdev.usingsomeapismvvm.data.model.response
+package br.com.evjdev.usingsomeapismvvm.data.model
 
-import br.com.evjdev.usingsomeapismvvm.data.model.Manga
+import br.com.evjdev.usingsomeapismvvm.domain.model.Manga
 import com.google.gson.annotations.SerializedName
 
 data class MangaResponse(

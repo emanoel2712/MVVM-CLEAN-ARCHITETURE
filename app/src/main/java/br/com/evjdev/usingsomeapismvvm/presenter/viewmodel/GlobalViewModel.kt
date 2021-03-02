@@ -1,10 +1,9 @@
-package br.com.evjdev.usingsomeapismvvm.ui.viewmodel
+package br.com.evjdev.usingsomeapismvvm.presenter.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.NavHostFragment
 import br.com.evjdev.usingsomeapismvvm.R
-import br.com.evjdev.usingsomeapismvvm.data.model.Card
+import br.com.evjdev.usingsomeapismvvm.domain.model.Card
 
 class GlobalViewModel : ViewModel() {
 

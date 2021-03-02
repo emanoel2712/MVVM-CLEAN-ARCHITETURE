@@ -1,10 +1,10 @@
-package br.com.evjdev.usingsomeapismvvm.ui.main.view.activity
+package br.com.evjdev.usingsomeapismvvm.presenter.main.view.activity
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import br.com.evjdev.usingsomeapismvvm.R
+import br.com.evjdev.usingsomeapismvvm.presenter.view.activity.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class  MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

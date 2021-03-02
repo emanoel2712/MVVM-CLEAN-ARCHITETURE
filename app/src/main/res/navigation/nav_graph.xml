@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/MainMenuFragment"
-        android:name="br.com.evjdev.usingsomeapismvvm.ui.view.fragment.MainMenuFragment"
+        android:name="br.com.evjdev.usingsomeapismvvm.presenter.view.fragment.MainMenuFragment"
         android:label="main_fragment"
         app:defaultNavHost="true"
         tools:layout="@layout/fragment_main_menu">

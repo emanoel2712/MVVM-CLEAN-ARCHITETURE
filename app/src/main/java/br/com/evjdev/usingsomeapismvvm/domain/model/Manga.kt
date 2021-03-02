@@ -1,4 +1,4 @@
-package br.com.evjdev.usingsomeapismvvm.data.model
+package br.com.evjdev.usingsomeapismvvm.domain.model
 
 import com.google.gson.annotations.SerializedName
 

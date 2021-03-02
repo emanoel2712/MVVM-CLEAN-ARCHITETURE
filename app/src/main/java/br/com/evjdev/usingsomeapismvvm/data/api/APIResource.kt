@@ -1,9 +1,8 @@
 package br.com.evjdev.usingsomeapismvvm.data.api
 
-import br.com.evjdev.usingsomeapismvvm.data.model.Manga
+import br.com.evjdev.usingsomeapismvvm.domain.model.Manga
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface APIResource {

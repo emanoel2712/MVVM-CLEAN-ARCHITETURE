@@ -1,4 +1,4 @@
-package br.com.evjdev.usingsomeapismvvm.ui.view.adapter
+package br.com.evjdev.usingsomeapismvvm.presenter.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import br.com.evjdev.usingsomeapismvvm.R
-import br.com.evjdev.usingsomeapismvvm.data.model.Card
+import br.com.evjdev.usingsomeapismvvm.domain.model.Card
 import kotlinx.android.synthetic.main.adapter_card.view.*
 
 class CardAdapter(private val contextIn: Context, private val cardListIn: List<Card>) :

@@ -1,4 +1,4 @@
-package br.com.evjdev.usingsomeapismvvm.ui.view.activity
+package br.com.evjdev.usingsomeapismvvm.presenter.view.activity
 
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity

@@ -1,4 +1,4 @@
-package br.com.evjdev.usingsomeapismvvm.data.model
+package br.com.evjdev.usingsomeapismvvm.domain.model
 
 data class Card(
     var cID: Int? = null,

@@ -1,4 +1,4 @@
-package br.com.evjdev.usingsomeapismvvm.ui.view.fragment
+package br.com.evjdev.usingsomeapismvvm.presenter.view.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.evjdev.usingsomeapismvvm.databinding.FragmentMainMenuBinding
-import br.com.evjdev.usingsomeapismvvm.ui.view.adapter.CardAdapter
-import br.com.evjdev.usingsomeapismvvm.ui.viewmodel.GlobalViewModel
+import br.com.evjdev.usingsomeapismvvm.presenter.view.adapter.CardAdapter
+import br.com.evjdev.usingsomeapismvvm.presenter.viewmodel.GlobalViewModel
 
 class MainMenuFragment : Fragment() {
 

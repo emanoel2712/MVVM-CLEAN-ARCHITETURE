@@ -1,4 +1,4 @@
-package br.com.evjdev.usingsomeapismvvm.ui.view.adapter
+package br.com.evjdev.usingsomeapismvvm.presenter.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.evjdev.usingsomeapismvvm.R
-import br.com.evjdev.usingsomeapismvvm.data.model.Manga
+import br.com.evjdev.usingsomeapismvvm.domain.model.Manga
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.adapter_manga.view.*
 
