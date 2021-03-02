@@ -61,13 +61,12 @@ class MangaFragment : Fragment() {
 
     private fun setupObserverMangasData() {
         this.viewModel.mangas.observe(viewLifecycleOwner) { mangaListIn ->
-            this.setupMangaRV(mangaListIn)
-//            this.populateMangas(mangaListIn)
+            this.populateMangas(mangaListIn)
         }
     }
 
     private fun populateMangas(mangas: List<Manga>) {
-//        binding?.rvManga?.adapter = MangaAdapter(requireContext(), mangas)
+        binding?.rvManga?.adapter = MangaAdapter(requireContext(), mangas)
     }
 
     private fun setupMangaRV(mangaListIn: List<Manga>) {

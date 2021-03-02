@@ -5,14 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.evjdev.usingsomeapismvvm.R
 import br.com.evjdev.usingsomeapismvvm.databinding.FragmentMainMenuBinding
 import br.com.evjdev.usingsomeapismvvm.presenter.view.adapter.CardAdapter
 import br.com.evjdev.usingsomeapismvvm.presenter.viewmodel.GlobalViewModel
-import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainMenuFragment : Fragment() {
 
@@ -22,8 +19,9 @@ class MainMenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for this fragment
         this.binding = FragmentMainMenuBinding.inflate(inflater, container, false)
-        return binding?.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,7 +49,6 @@ class MainMenuFragment : Fragment() {
         }
 
         this.binding?.rvCards?.adapter = cardsOpAdapter
-        this.binding?.rvCards?.adapter?.notifyDataSetChanged()
     }
 
     private fun makeNavigation() {
@@ -59,7 +56,7 @@ class MainMenuFragment : Fragment() {
         when (GlobalViewModel.sharedInstance.mCardSelected.cID) {
 
             1 -> {
-                this.findNavController().navigate(MainMenuFragmentDirections.actionMainMenuToManga())
+//                this.findNavController().navigate(MainMenuFragmentDirections.actionMainMenuToAnime())
             }
 
             2 -> {

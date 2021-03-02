@@ -16,10 +16,4 @@
             android:id="@+id/action_main_menu_to_manga"
             app:destination="@+id/MangaFragment" />
     </fragment>
-
-    <fragment
-        android:id="@+id/MangaFragment"
-        android:name="br.com.evjdev.usingsomeapismvvm.presenter.view.fragment.MangaFragment"
-        android:label="manga_fragment"
-        tools:layout="@layout/fragment_manga" />
 </navigation>

@@ -10,8 +10,6 @@ android {
     buildToolsVersion "30.0.2"
     apply plugin: 'kotlin-android-extensions'
     apply plugin: 'kotlin-kapt'
-    apply plugin: 'kotlin-android-extensions'
-    apply plugin: 'androidx.navigation.safeargs.kotlin'
 
     viewBinding {
         enabled = true
