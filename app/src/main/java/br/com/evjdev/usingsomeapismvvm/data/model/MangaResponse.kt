@@ -11,5 +11,5 @@ data class MangaResponse(
     @SerializedName("request_cache_expiry")
     var mRequestCacheExpiry: String? = null,
     @SerializedName("results")
-    var mListIn: List<Manga>? = null,
+    var mListIn: List<Manga>? = listOf(),
 )

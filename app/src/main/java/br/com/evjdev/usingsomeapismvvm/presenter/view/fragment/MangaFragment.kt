@@ -18,19 +18,17 @@ import br.com.evjdev.usingsomeapismvvm.presenter.view.activity.BaseActivity
 import br.com.evjdev.usingsomeapismvvm.presenter.view.adapter.MangaAdapter
 import br.com.evjdev.usingsomeapismvvm.presenter.viewmodel.MangaViewModel
 import kotlinx.android.synthetic.main.fragment_manga.*
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class MangaFragment : Fragment() {
 
-    private var viewModel: MangaViewModel = MangaViewModel()
-
+    private val viewModel: MangaViewModel by sharedViewModel()
     private var binding: FragmentMangaBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        //Inflate View Binding
         this.binding = FragmentMangaBinding.inflate(inflater, container, false)
         return binding?.root
     }
@@ -38,7 +36,6 @@ class MangaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         this.setupUI()
-        this.setupViewModel()
         this.setupObserverMangasData()
         this.viewModel.getMangas()
     }
@@ -55,13 +52,8 @@ class MangaFragment : Fragment() {
         this.editClickInNext()
     }
 
-    private fun setupViewModel() {
-        this.viewModel = ViewModelProviders.of(requireActivity(), defaultViewModelProviderFactory).get(MangaViewModel::class.java)
-    }
-
     private fun setupObserverMangasData() {
         this.viewModel.mangas.observe(viewLifecycleOwner) { mangaListIn ->
-
             println("LISTA DE MANGAS $mangaListIn")
             this.setupMangaRV(mangaListIn)
 //            this.populateMangas(mangaListIn)
