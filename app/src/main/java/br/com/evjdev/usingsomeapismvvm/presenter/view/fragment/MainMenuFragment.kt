@@ -59,7 +59,8 @@ class MainMenuFragment : Fragment() {
         when (GlobalViewModel.sharedInstance.mCardSelected.cID) {
 
             1 -> {
-                this.findNavController().navigate(MainMenuFragmentDirections.actionMainMenuToManga())
+                this.findNavController()
+                    .navigate(MainMenuFragmentDirections.actionMainMenuToManga())
             }
 
             2 -> {

@@ -70,6 +70,9 @@ dependencies {
     implementation "org.koin:koin-androidx-scope:$koin_version"
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
 
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.3'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.etebarian:meow-bottom-navigation:1.2.0'
     implementation 'com.wang.avi:library:2.1.3'

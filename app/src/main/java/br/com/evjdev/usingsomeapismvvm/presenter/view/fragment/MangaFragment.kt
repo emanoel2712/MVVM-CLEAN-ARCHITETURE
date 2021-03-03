@@ -76,6 +76,8 @@ class MangaFragment : Fragment() {
             this?.adapter = mMangaAdapter
             this?.layoutManager = mLayoutManager
 
+            this?.adapter?.notifyDataSetChanged()
+
             println("LISTA DE MANGAS $mangaListIn")
         }
     }

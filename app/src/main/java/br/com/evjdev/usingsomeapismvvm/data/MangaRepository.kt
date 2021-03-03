@@ -10,30 +10,27 @@ import retrofit2.Response
 
 class MangaRepositoryImpl(private val service: APIClient) : MangaRepository {
 
-    private var mangasListIn: List<Manga>? = listOf()
+    lateinit var mangasListIn: List<Manga>
 
-    override suspend fun getMangas(): List<Manga>? {
-
-        val mCallback: Call<Manga> =
+    override suspend fun getMangas(): List<Manga> {
+        val mCallback: Call<MangaResponse> =
             this.service.clientAPI.getMangas(MangaViewModel.sharedInstance.getMangaRandom())
-        mCallback.enqueue(object : Callback<Manga> {
-            override fun onResponse(call: Call<Manga>, response: Response<Manga>) {
+
+        mCallback.enqueue(object : Callback<MangaResponse> {
+            override fun onResponse(call: Call<MangaResponse>, response: Response<MangaResponse>) {
 
                 if (!response.isSuccessful) {
                     println("Falha na resposta do serviço!!")
                 }
 
                 response.body()?.let {
-                    println("response body " + response.body())
-
-                    val mangaResponseIn: MangaResponse? = response.body() as MangaResponse?
-                    mangasListIn = mangaResponseIn?.mListIn
-
+                    val mangaResponseIn: MangaResponse = it
+                    mangasListIn = mangaResponseIn.mListIn
                     println("RESPONSE SERVIÇO " + mangasListIn)
                 }
             }
 
-            override fun onFailure(call: Call<Manga>, t: Throwable) {
+            override fun onFailure(call: Call<MangaResponse>, t: Throwable) {
 
             }
         })
@@ -43,5 +40,5 @@ class MangaRepositoryImpl(private val service: APIClient) : MangaRepository {
 }
 
 interface MangaRepository {
-    suspend fun getMangas(): List<Manga>?
+    suspend fun getMangas(): List<Manga>
 }
