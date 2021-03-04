@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "UsingSomeAPISMVVM"
+rootProject.name = "UsingSomeAPISMVVM-CLEAN-ARCHITETURE"
