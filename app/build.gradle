@@ -18,7 +18,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "br.com.evjdev.usingsomeapismvvm_clean_architeture"
+        applicationId "br.com.evjdev.usingsomeapismvvm"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
